@@ -123,6 +123,7 @@ return packer.startup(function(use)
 
   -- Buffers stuff 
   use "ghillb/cybu.nvim"
+
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
     require("packer").sync()
