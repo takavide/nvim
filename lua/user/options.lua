@@ -43,4 +43,3 @@ end
 vim.cmd "set whichwrap+=<,>,[,],h,l"
 vim.cmd [[set iskeyword+=-]]
 --Helps jump out of brackets easier; Use shift-tab when using tab or use visual <>><
-vim.cmd "imap <Tab> <Right>"

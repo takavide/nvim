@@ -135,11 +135,20 @@ require'lspconfig'.cssmodules_ls.setup{
   on_attach = require("user.lsp.handlers").on_attach,
   capabilities = require("user.lsp.handlers").capabilities,
 }
+
 require'lspconfig'.bashls.setup{
   flags = lsp_flags,
   on_attach = require("user.lsp.handlers").on_attach,
   capabilities = require("user.lsp.handlers").capabilities,
 }
+
+require'lspconfig'.tsserver.setup{
+  flags = lsp_flags,
+  on_attach = require("user.lsp.handlers").on_attach,
+  capabilities = require("user.lsp.handlers").capabilities,
+}
+
+
 vim.api.nvim_set_hl(0, "NormalFloat", {bg="#16161e"})
 vim.api.nvim_set_hl(0, "FloatBorder", {bg="#16161e",fg="#16161e"})
 

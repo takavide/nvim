@@ -124,6 +124,12 @@ return packer.startup(function(use)
   -- Buffers stuff 
   use "ghillb/cybu.nvim"
 
+  -- Discord activity(idk)
+  --use "andweeb/presence.nvim"
+
+  -- Buffers delete ez
+  use 'famiu/bufdelete.nvim'
+
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
     require("packer").sync()

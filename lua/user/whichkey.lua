@@ -87,7 +87,8 @@ local mappings = {
   ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
   ["w"] = { "<cmd>w!<CR>", "Save" },
   ["q"] = { "<cmd>q!<CR>", "Quit" },
-  ["c"] = { "<cmd>bd!<CR>", "Close Buffer" },
+  ["Q"] = { "<cmd>qa!<CR>", "Quit all" },
+  ["c"] = { "<cmd>Bd!<CR>", "Close Buffer" },
   ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
   ["f"] = {
     "<cmd>Telescope find_files previewer=false layout_config={prompt_position='top'}<cr>",
@@ -190,7 +191,7 @@ local vopts = {
   nowait = true, -- use `nowait` when creating keymaps
 }
 local vmappings = {
-  ["/"] = { "<ESC><CMD>lua require(\"Comment.api\").toggle_linewise_op(vim.fn.visualmode())<CR>", "Comment" },
+  ["/"] = { "<esc><cmd>lua require(\"comment.api\").toggle_linewise_op(vim.fn.visualmode())<cr>", "comment" },
 }
 
 which_key.setup(setup)

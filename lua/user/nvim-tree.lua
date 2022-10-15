@@ -53,7 +53,7 @@ nvimtree.setup({
           empty_open = "",
           open = "",
           symlink = "",
-          symlink_open = "",
+          symlink_open = "",
           arrow_open = "",
           arrow_closed = "",
         },
