@@ -9,9 +9,10 @@ local actions = require "telescope.actions"
 
 telescope.setup {
   defaults = {
-    prompt_prefix = "   ",
+    prompt_prefix = " » ",
     prompt_position = "top",
-    selection_caret = "  ",
+    selection_caret = " » ",
+    disable_devicons = true,
     path_display = { "smart" },
     initial_mode = "insert",
     selection_strategy = "reset",

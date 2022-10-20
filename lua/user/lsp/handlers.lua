@@ -8,15 +8,19 @@ if not status_cmp_ok then
 end
 
 M.capabilities.textDocument.completion.completionItem.snippetSupport = true
-M.capabilities = cmp_nvim_lsp.update_capabilities(M.capabilities)
+M.capabilities = cmp_nvim_lsp.default_capabilities(M.capabilities)
 
 M.setup = function()
   local signs = {
 
-    { name = "DiagnosticSignError", text = "" },
-    { name = "DiagnosticSignWarn", text = "" },
-    { name = "DiagnosticSignHint", text = "" },
-    { name = "DiagnosticSignInfo", text = "" },
+   -- { name = "DiagnosticSignError", text = "" },
+   -- { name = "DiagnosticSignWarn", text = "" },
+   -- { name = "DiagnosticSignHint", text = "" },
+   -- { name = "DiagnosticSignInfo", text = "" },
+    { name = "DiagnosticSignError", text = "E" },
+    { name = "DiagnosticSignWarn", text = "W" },
+    { name = "DiagnosticSignHint", text = "?" },
+    { name = "DiagnosticSignInfo", text = "I" },
   }
 
   for _, sign in ipairs(signs) do
@@ -24,20 +28,23 @@ M.setup = function()
   end
 
   local config = {
-    -- disable virtual text
-    virtual_lines = false,
-    virtual_text = false,
-    -- virtual_text = {
-    --   -- spacing = 7,
-    --   -- update_in_insert = false,
-    --   -- severity_sort = true,
-    --   -- prefix = "<-",
-    --   prefix = " ●",
-    --   source = "if_many", -- Or "always"
-    --   -- format = function(diag)
-    --   --   return diag.message .. "blah"
-    --   -- end,
-    -- },
+    -- disable virtual text?
+    --virtual_lines = false,
+    --virtual_text = false,
+    --virtual_lines = true,
+    --virtual_text = true,
+   -- virtual_text = {
+   --     spacing = 7,
+   --     update_in_insert = false,
+   --     severity_sort = true,
+   --    -- prefix = "<-",
+   --    --prefix = " ●",
+   --    prefix = " *",
+   --    --source = "if_many", -- Or "always"
+   --     format = function(diag)
+   --       return diag.message .. "blah"
+   --     end,
+   --  },
 
     -- show signs
     signs = {
@@ -51,7 +58,7 @@ M.setup = function()
       style = "minimal",
       border = "single",
       -- border = {"▄","▄","▄","█","▀","▀","▀","█"},
-      source = "if_many", -- Or "always"
+      source = "always", -- Or "always"
       header = "",
       prefix = "",
       -- width = 40,
@@ -71,7 +78,7 @@ M.setup = function()
     -- width = 60,
     -- height = 30,
   })
-end  
+end
 
 local function lsp_keymaps(bufnr)
   local opts = { noremap = true, silent = true }

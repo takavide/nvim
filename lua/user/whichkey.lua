@@ -81,7 +81,7 @@ local opts = {
 local mappings = {
   ["/"] = { "<cmd>lua require(\"Comment.api\").toggle_current_linewise()<CR>", "Comment" },
   ["b"] = {
-    "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+    "<cmd>Telescope buffers disable_devicons=true<cr>",
     "Buffers",
   },
   ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
@@ -91,10 +91,10 @@ local mappings = {
   ["c"] = { "<cmd>Bd!<CR>", "Close Buffer" },
   ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
   ["f"] = {
-    "<cmd>Telescope find_files previewer=false layout_config={prompt_position='top'}<cr>",
+    "<cmd>Telescope find_files previewer=false layout_config={prompt_position='top'} disable_devicons=true<cr>",
     "Find files",
   },
-  ["F"] = { "<cmd>Telescope live_grep layout_config={prompt_position='top'}<cr>", "Find Text" },
+  ["F"] = { "<cmd>Telescope live_grep layout_config={prompt_position='top'} disable_devicons=true<cr>", "Find Text" },
 
   p = {
     name = "Packer",
@@ -164,7 +164,7 @@ local mappings = {
     c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
     h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
     M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
-    r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
+    r = { "<cmd>Telescope oldfiles disable_devicons=true<cr>", "Open Recent File" },
     R = { "<cmd>Telescope registers<cr>", "Registers" },
     k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
     C = { "<cmd>Telescope commands<cr>", "Commands" },
@@ -191,7 +191,7 @@ local vopts = {
   nowait = true, -- use `nowait` when creating keymaps
 }
 local vmappings = {
-  ["/"] = { "<esc><cmd>lua require(\"comment.api\").toggle_linewise_op(vim.fn.visualmode())<cr>", "comment" },
+  ["/"] = { "<esc><cmd>lua require(\"Comment.api\").toggle_linewise_op(vim.fn.visualmode())<cr>", "comment" },
 }
 
 which_key.setup(setup)

@@ -17,7 +17,7 @@ require("cybu").setup({ position = {
     padding = 1,                  -- left & right padding in number of spaces
     hide_buffer_id = true,        -- hide buffer IDs in window
     devicons = {
-      enabled = true,             -- enable or disable web dev icons
+      enabled = false,             -- enable or disable web dev icons
       colored = true,             -- enable color for web dev icons
       truncate = true,            -- truncate wide icons to one char width
     },

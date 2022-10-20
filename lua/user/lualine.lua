@@ -22,7 +22,7 @@ local colors = {
 
 local tokyoballs = {
   visual = {
-    a = { bg = colors.magenta, fg = colors.black },
+    a = { bg = colors.magenta, fg = colors.black, "bold" },
     b = { bg = colors.fg_gutter, fg = colors.magenta },
   },
   replace = {
@@ -31,7 +31,7 @@ local tokyoballs = {
   },
   inactive = {
     a = { bg = colors.dark, fg = colors.blue },
-    b = { bg = colors.dark, fg = colors.fg_gutter, gui = "bold" },
+    b = { bg = colors.dark, fg = colors.fg_gutter, "bold" },
     c = { bg = colors.dark, fg = colors.fg_gutter },
   },
   insert = {
@@ -74,7 +74,8 @@ local diff = {
 local mode = {
 	"mode",
 	fmt = function(str)
-		return " " .. str .. " "
+		--return " " .. str .. " "
+		return " " .. str
 	end,
 }
 
@@ -85,7 +86,7 @@ local filename = {
 
 local filetype = {
 	"filetype",
-	icons_enabled = true,
+	icons_enabled = false,
 	icon = nil,
   colored = false,
 }
@@ -127,9 +128,12 @@ lualine.setup({
 	options = {
 		icons_enabled = true,
 		theme = tokyoballs,
-		component_separators = { left = "│", right = "│" },
+		component_separators = { left = "▎", right = "▎" },
+		--component_separators = { left = "⢸", right = "⢸" },
     --icons;  
-		section_separators = { left = "", right = "" },
+		--section_separators = { left = "█▒░", right = "░▒█" },
+		--section_separators = { left = "", right = "" },
+		section_separators = { left = "", right = "" },
 		disabled_filetypes = { "dashboard", "NvimTree", "Outline" },
 		always_divide_middle = true,
 	},
