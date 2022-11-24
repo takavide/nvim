@@ -14,9 +14,9 @@ local setup = {
     -- the presets plugin, adds help for a bunch of default keybindings in Neovim
     -- No actual key bindings are created
     presets = {
-      operators = false, -- adds help for operators like d, y, ... and registers them for motion / text object completion
-      motions = false, -- adds help for motions
-      text_objects = false, -- help for text objects triggered after entering an operator
+      operators = true, -- adds help for operators like d, y, ... and registers them for motion / text object completion
+      motions = true, -- adds help for motions
+      text_objects = true, -- help for text objects triggered after entering an operator
       windows = true, -- default bindings on <c-w>
       nav = true, -- misc bindings to work with windows
       z = true, -- bindings for folds, spelling and others prefixed with z
@@ -35,7 +35,7 @@ local setup = {
   },
   icons = {
     breadcrumb = "»", -- symbol used in the command line area that shows your active key combo
-    separator = "➜", -- symbol used between a key and it's label
+    separator = ">", -- symbol used between a key and it's label
     group = "+", -- symbol prepended to a group
   },
   popup_mappings = {
@@ -79,20 +79,20 @@ local opts = {
 }
 
 local mappings = {
-  ["/"] = { "<cmd>lua require(\"Comment.api\").toggle_current_linewise()<CR>", "Comment" },
   ["b"] = {
     "<cmd>Telescope buffers disable_devicons=true<cr>",
     "Buffers",
   },
   ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
-  ["w"] = { "<cmd>w!<CR>", "Save" },
+  ["w"] = { "<cmd>w! | ColorizerReloadAllBuffers<CR>", "Save" },
   ["q"] = { "<cmd>q!<CR>", "Quit" },
-  ["Q"] = { "<cmd>qa!<CR>", "Quit all" },
+  ["Q"] = { "<cmd>qa!<CR>", "Quit All" },
   ["c"] = { "<cmd>Bd!<CR>", "Close Buffer" },
-  ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
+  ["C"] = { "<cmd>ColorizerReloadAllBuffers<CR>", "Reload Colorizer" },
+  ["h"] = { "<cmd>nohlsearch | ColorizerReloadAllBuffers<CR>", "No Highlight" },
   ["f"] = {
     "<cmd>Telescope find_files previewer=false layout_config={prompt_position='top'} disable_devicons=true<cr>",
-    "Find files",
+    "Find Files",
   },
   ["F"] = { "<cmd>Telescope live_grep layout_config={prompt_position='top'} disable_devicons=true<cr>", "Find Text" },
 

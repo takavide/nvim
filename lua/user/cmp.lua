@@ -15,7 +15,8 @@ local check_backspace = function()
   return col == 0 or vim.fn.getline("."):sub(col, col):match "%s"
 end
 
---   פּ ﯟ   some other good icons
+
+--  פּ ﯟ   some other good icons
 local kind_icons = {
   Text = "",
   Method = "m",
@@ -96,7 +97,8 @@ cmp.setup {
     }),
   },
   formatting = {
-    fields = { "kind", "abbr", "menu" },
+    fields = {"abbr", "menu" },
+    --fields = { "kind", "abbr", "menu" },
     format = function(entry, vim_item)
       -- Kind icons
       vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
@@ -134,3 +136,4 @@ cmp.setup {
     native_menu = false,
   },
 }
+

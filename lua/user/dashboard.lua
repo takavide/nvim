@@ -141,6 +141,6 @@ db.custom_center = {
       shortcut = '~'},
     }
 
-db.custom_footer = {"nothing truly matters","suffer, experience, live, die", "everything is unbelievably stupid"}
+db.custom_footer = {"dying is the easy part","reminder: ur not smart loooooooooooool", "loooooooooooooooool"}
 
 

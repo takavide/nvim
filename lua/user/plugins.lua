@@ -52,13 +52,13 @@ return packer.startup(function(use)
   use { "catppuccin/nvim", as = "catppuccin" }
 
   -- Cmp plugins
-  use "hrsh7th/nvim-cmp" -- The completion plugin
-  use "hrsh7th/cmp-buffer" -- buffer completions
-  use "hrsh7th/cmp-path" -- path completions
-  use "hrsh7th/cmp-cmdline" -- cmdline completions
-  use "saadparwaiz1/cmp_luasnip" -- snippet completions
-  use "hrsh7th/cmp-nvim-lsp"
-  use "hrsh7th/cmp-nvim-lua"
+  use "hrsh7th/nvim-cmp"--, event="InsertEnter"} -- The completion plugin
+  use "hrsh7th/cmp-buffer"--, after="nvim-cmp"} -- buffer completions
+  use "hrsh7th/cmp-path"--, after="nvim-cmp"} -- path completions
+  use "hrsh7th/cmp-cmdline"--, after="nvim-cmp"} -- cmdline completions
+  use "saadparwaiz1/cmp_luasnip"--, after="nvim-cmp"} -- snippet completions
+  use "hrsh7th/cmp-nvim-lsp"--, after="nvim-cmp"}
+  use "hrsh7th/cmp-nvim-lua"--, after="nvim-cmp"}
 
   -- Snippets
   use "L3MON4D3/LuaSnip" --snippet engine
@@ -71,37 +71,38 @@ return packer.startup(function(use)
   use "jose-elias-alvarez/null-ls.nvim"
 
   -- Colorizer
-  use "norcalli/nvim-colorizer.lua"
+  use {"norcalli/nvim-colorizer.lua", config="require('user.colorizer')", event="BufEnter"}
 
   -- Telescope
-  use "nvim-telescope/telescope.nvim"
-  use 'nvim-telescope/telescope-media-files.nvim'
+  --use {"nvim-telescope/telescope.nvim", event="BufRead"}
+  use {"nvim-telescope/telescope.nvim"}
+  use {'nvim-telescope/telescope-media-files.nvim'}
 
   -- TreeSitter
   use {
     "nvim-treesitter/nvim-treesitter",
-    run = ":TSUpdate",
+    run = ":TSUpdate"--, event="BufWinEnter", config="require('user.treesitter')"
   }
   --fix config treesitter config later
-  use "p00f/nvim-ts-rainbow"
-  use "nvim-treesitter/playground"
+  --use "p00f/nvim-ts-rainbow"
+  --use "nvim-treesitter/playground"
 
   -- Autopairs(treesitter and cmp together)
-  use "windwp/nvim-autopairs"
+  use "windwp/nvim-autopairs"--, config="require('user.autopairs')", after="nvim-cmp"}
 
   -- Comments
   use "numToStr/Comment.nvim" -- Easily comment stuff
-  use "JoosepAlviste/nvim-ts-context-commentstring" -- helps know the context
+  use "JoosepAlviste/nvim-ts-context-commentstring" -- helps know the context for TS
 
   -- Gitsigns 
   use "lewis6991/gitsigns.nvim"
 
   -- Nvim-tree
-  use "kyazdani42/nvim-web-devicons"
+  --use "kyazdani42/nvim-web-devicons"
   use "kyazdani42/nvim-tree.lua"
 
   -- Lualine
-  use 'nvim-lualine/lualine.nvim'
+  use 'nvim-lualine/lualine.nvim'--, event="BufWinEnter", config="require('user.lualine')"}
 
   -- Blank indentline
   use "lukas-reineke/indent-blankline.nvim"
@@ -116,7 +117,7 @@ return packer.startup(function(use)
   use "folke/which-key.nvim"
 
   -- trouble.nvim
-  use "folke/trouble.nvim"
+  --use "folke/trouble.nvim"
 
   -- Dashboard
   use "glepnir/dashboard-nvim"
@@ -130,7 +131,7 @@ return packer.startup(function(use)
   -- Buffers delete ez
   use 'famiu/bufdelete.nvim'
 
-  -- DAP
+  -- DAP fix later
   --use 'mfussenegger/nvim-dap'
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then

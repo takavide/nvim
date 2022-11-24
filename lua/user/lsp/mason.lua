@@ -34,9 +34,12 @@ local servers = {
 mason.setup {
   ui = {
     icons = {
-      package_installed = "﫟 ",
-      package_pending = "",
-      package_uninstalled = " ",
+      --[[ package_installed = "﫟 ", ]]
+      --[[ package_pending = "", ]]
+      --[[ package_uninstalled = " ", ]]
+      package_installed = "◆",
+      package_pending = "P",
+      package_uninstalled = "◊",
     },
     border = "single",
   },
@@ -61,7 +64,6 @@ require'lspconfig'.pyright.setup{
   on_attach = require("user.lsp.handlers").on_attach,
   capabilities = require("user.lsp.handlers").capabilities,
 }
-
 
 require'lspconfig'.sumneko_lua.setup{
 
@@ -142,13 +144,33 @@ require'lspconfig'.bashls.setup{
   capabilities = require("user.lsp.handlers").capabilities,
 }
 
+require'lspconfig'.eslint.setup{
+  flags = lsp_flags,
+  on_attach = require("user.lsp.handlers").on_attach,
+  capabilities = require("user.lsp.handlers").capabilities,
+}
+
 require'lspconfig'.tsserver.setup{
   flags = lsp_flags,
   on_attach = require("user.lsp.handlers").on_attach,
   capabilities = require("user.lsp.handlers").capabilities,
 }
 
+require'lspconfig'.html.setup{
+  flags = lsp_flags,
+  on_attach = require("user.lsp.handlers").on_attach,
+  capabilities = require("user.lsp.handlers").capabilities,
+}
+
+require'lspconfig'.clangd.setup{
+  flags = lsp_flags,
+  on_attach = require("user.lsp.handlers").on_attach,
+  capabilities = require("user.lsp.handlers").capabilities,
+}
 
 vim.api.nvim_set_hl(0, "NormalFloat", {bg="#16161e"})
 vim.api.nvim_set_hl(0, "FloatBorder", {bg="#16161e",fg="#16161e"})
-
+vim.api.nvim_set_hl(0, "DiagnosticUnderlineError", {underline=true, undercurl=false, sp="#db4b4b"})
+vim.api.nvim_set_hl(0, "DiagnosticUnderlineWarn", {underline=true, undercurl=false, sp="#e0af68"})
+vim.api.nvim_set_hl(0, "DiagnosticUnderlineInfo",  {underline=true, undercurl=false, sp="#0db9d7"})
+vim.api.nvim_set_hl(0, "DiagnosticUnderlineHint",  {underline=true, undercurl=false, sp="#1abc9c"})

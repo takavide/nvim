@@ -30,7 +30,7 @@ nvimtree.setup({
   renderer = {
     highlight_git = false,
     highlight_opened_files = "none",
-
+    add_trailing = false,
     indent_markers = {
       enable = true,
     },
