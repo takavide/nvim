@@ -5,8 +5,9 @@ end
 
 
 nvimtree.setup({
-  sort_by = "case_sensitive",
   sync_root_with_cwd = true,
+  hijack_unnamed_buffer_when_opening = true,
+  sort_by = "case_sensitive",
   hijack_cursor = true,
   view = {
     side = "left",

@@ -11,6 +11,8 @@ null_ls.setup({
         require("null-ls").builtins.diagnostics.shellcheck,
        -- require("null-ls").builtins.diagnostics.eslint_d,
         require("null-ls").builtins.completion.spell,
+        require("null-ls").builtins.formatting.prettierd,
+        require("null-ls").builtins.formatting.autopep8,
         --require("null-ls").builtins.completion.prettierd,
     },
 })

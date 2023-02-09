@@ -89,11 +89,6 @@ _G.packer_plugins = {
     path = "/home/takavide/.local/share/nvim/site/pack/packer/start/bufdelete.nvim",
     url = "https://github.com/famiu/bufdelete.nvim"
   },
-  catppuccin = {
-    loaded = true,
-    path = "/home/takavide/.local/share/nvim/site/pack/packer/start/catppuccin",
-    url = "https://github.com/catppuccin/nvim"
-  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/home/takavide/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -123,11 +118,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/takavide/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
-  },
-  colorschemes = {
-    loaded = true,
-    path = "/home/takavide/.local/share/nvim/site/pack/packer/start/colorschemes",
-    url = "https://github.com/lunarvim/colorschemes"
   },
   ["cybu.nvim"] = {
     loaded = true,
@@ -159,11 +149,6 @@ _G.packer_plugins = {
     path = "/home/takavide/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
     url = "https://github.com/lukas-reineke/indent-blankline.nvim"
   },
-  ["kanagawa.nvim"] = {
-    loaded = true,
-    path = "/home/takavide/.local/share/nvim/site/pack/packer/start/kanagawa.nvim",
-    url = "https://github.com/rebelot/kanagawa.nvim"
-  },
   ["lualine.nvim"] = {
     loaded = true,
     path = "/home/takavide/.local/share/nvim/site/pack/packer/start/lualine.nvim",
@@ -178,11 +163,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/takavide/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
-  },
-  ["nightfox.nvim"] = {
-    loaded = true,
-    path = "/home/takavide/.local/share/nvim/site/pack/packer/start/nightfox.nvim",
-    url = "https://github.com/EdenEast/nightfox.nvim"
   },
   ["null-ls.nvim"] = {
     loaded = true,
@@ -200,11 +180,8 @@ _G.packer_plugins = {
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
   ["nvim-colorizer.lua"] = {
-    config = { "require('user.colorizer')" },
-    loaded = false,
-    needs_bufread = false,
-    only_cond = false,
-    path = "/home/takavide/.local/share/nvim/site/pack/packer/opt/nvim-colorizer.lua",
+    loaded = true,
+    path = "/home/takavide/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua",
     url = "https://github.com/norcalli/nvim-colorizer.lua"
   },
   ["nvim-lspconfig"] = {
@@ -270,13 +247,6 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
-vim.cmd [[augroup packer_load_aucmds]]
-vim.cmd [[au!]]
-  -- Event lazy-loads
-time([[Defining lazy-load event autocommands]], true)
-vim.cmd [[au BufEnter * ++once lua require("packer.load")({'nvim-colorizer.lua'}, { event = "BufEnter *" }, _G.packer_plugins)]]
-time([[Defining lazy-load event autocommands]], false)
-vim.cmd("augroup END")
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then
