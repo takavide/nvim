@@ -3,12 +3,24 @@ if not status_ok then
   return
 end
 
-
 nvimtree.setup({
-  sync_root_with_cwd = true,
+  hijack_netrw=true,
   hijack_unnamed_buffer_when_opening = true,
+  sync_root_with_cwd=true,
   sort_by = "case_sensitive",
+  filesystem_watchers={
+    enable=true,
+  },
+  update_focused_file={
+    enable=true,
+    update_root=true,
+  },
+  modified={
+    enable=false,
+  },
+  respect_buf_cwd=true,
   hijack_cursor = true,
+  prefer_startup_root=true,
   view = {
     side = "left",
     width = 30,
@@ -100,4 +112,23 @@ nvimtree.setup({
   },
 })
 
+local function open_nvim_tree(data)
 
+  -- buffer is a directory
+  local directory = vim.fn.isdirectory(data.file) == 1
+
+  -- change to the directory
+
+  if not directory then
+    return
+  end
+
+  vim.cmd.cd(data.file)
+
+  -- open the tree
+  require("nvim-tree.api").tree.open()
+end
+
+
+
+vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })

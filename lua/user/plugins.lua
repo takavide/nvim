@@ -100,7 +100,7 @@ return packer.startup(function(use)
 
   -- Nvim-tree
   --use "kyazdani42/nvim-web-devicons"
-  use "kyazdani42/nvim-tree.lua"
+  use "nvim-tree/nvim-tree.lua"
 
   -- Lualine
   use 'nvim-lualine/lualine.nvim'--, event="BufWinEnter", config="require('user.lualine')"}

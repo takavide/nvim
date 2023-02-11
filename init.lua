@@ -20,3 +20,4 @@ require "user.dashboard"
 require "user.cybu"
 --require "user.trouble"
 --require "user.discord-presence
+
