@@ -65,7 +65,13 @@ require'lspconfig'.pyright.setup{
   capabilities = require("user.lsp.handlers").capabilities,
 }
 
-require'lspconfig'.sumneko_lua.setup{
+require'lspconfig'.svelte.setup{
+  flags = lsp_flags,
+  on_attach = require("user.lsp.handlers").on_attach,
+  capabilities = require("user.lsp.handlers").capabilities,
+}
+
+require'lspconfig'.lua_ls.setup{
 
   flags = lsp_flags,
   on_attach = require("user.lsp.handlers").on_attach,
@@ -163,6 +169,12 @@ require'lspconfig'.html.setup{
 }
 
 require'lspconfig'.clangd.setup{
+  flags = lsp_flags,
+  on_attach = require("user.lsp.handlers").on_attach,
+  capabilities = require("user.lsp.handlers").capabilities,
+}
+
+require'lspconfig'.als.setup{
   flags = lsp_flags,
   on_attach = require("user.lsp.handlers").on_attach,
   capabilities = require("user.lsp.handlers").capabilities,

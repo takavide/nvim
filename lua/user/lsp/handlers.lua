@@ -12,15 +12,14 @@ M.capabilities = cmp_nvim_lsp.default_capabilities(M.capabilities)
 
 M.setup = function()
 	local signs = {
-
-		-- { name = "DiagnosticSignError", text = "" },
-		-- { name = "DiagnosticSignWarn", text = "" },
-		-- { name = "DiagnosticSignHint", text = "" },
-		-- { name = "DiagnosticSignInfo", text = "" },
+		 --[[ { name = "DiagnosticSignError", text = "" }, ]]
+		 --[[ { name = "DiagnosticSignWarn", text = "" }, ]]
+		 --[[ { name = "DiagnosticSignHint", text = "" }, ]]
+		 --[[ { name = "DiagnosticSignInfo", text = "" }, ]]
 		{ name = "DiagnosticSignError", text = "E" },
-		{ name = "DiagnosticSignWarn", text = "W" },
-		{ name = "DiagnosticSignHint", text = "?" },
-		{ name = "DiagnosticSignInfo", text = "I" },
+  		{ name = "DiagnosticSignWarn", text = "W" },
+  		{ name = "DiagnosticSignHint", text = "?" },
+  		{ name = "DiagnosticSignInfo", text = "I" },
 	}
 
 	for _, sign in ipairs(signs) do
@@ -30,21 +29,21 @@ M.setup = function()
 	local config = {
 		-- disable virtual text?
 		virtual_lines = false,
-		virtual_text = false,
+		--virtual_text = false,
 		--virtual_lines = true,
 		--virtual_text = true,
-		-- virtual_text = {
-		--     spacing = 7,
-		--     update_in_insert = false,
-		--     severity_sort = true,
-		--    -- prefix = "<-",
-		--    --prefix = " ●",
-		--    prefix = " *",
-		--    --source = "if_many", -- Or "always"
-		--     format = function(diag)
-		--       return diag.message .. "blah"
-		--     end,
-		--  },
+		 virtual_text = {
+		  spacing = 7,
+		  update_in_insert = false,
+		  severity_sort = true,
+		    --prefix = "<-",
+		    prefix = "●",
+		    --prefix = "*",
+		    source = "if_many", -- Or "always"
+		    -- format = function(diag)
+		    --   return diag.message .. "blah"
+		    -- end,
+		  },
 
 		-- show signs
 		signs = {

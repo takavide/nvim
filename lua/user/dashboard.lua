@@ -38,26 +38,32 @@ db.setup({
     }, --your header
     center = {
           {
+            --[[ icon = '  ', ]]
             desc = 'File Browser                                                          ',
             action = "Telescope find_files previewer=false layout_config={prompt_position='top'} disable_devicons=true"
           },
           {
+            --[[ icon = '  ', ]]
             desc = 'New File',
             action = 'new'
           },
           {
+            --[[ icon = '  ', ]]
             desc = 'Recently Opened Files',
             action = "Telescope oldfiles previewer=false layout_config={prompt_position='top'} disable_devicons=true"
           },
           {
+            --[[ icon = '  ', ]]
             desc = 'Find Word',
             action = "Telescope live_grep layout_config={prompt_position='top'} disable_devicons=true"
           },
           {
+            --[[ icon = '  ', ]]
             desc = 'Open Config',
             action = "cd ~/.config/nvim/ | e ~/.config/nvim/init.lua"
           },
           {
+            --[[ icon = '  ', ]]
             desc = 'Exit Neovim',
             action = "qa!"
           },
@@ -139,10 +145,10 @@ db.custom_header = {
     ' ⣿⣿⣿⣿⣿⠿⠄⠚⠋⠁⠘⣿⣿⠄⢰⣄⣀⠄⠉⠉⠉⠉⠉⠉⠁⠄⢀⣀⣀⠘⣿⠇⠄⢀⣉⠙⠃⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣟⡛⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿',
     ' ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⠘⠏⠄⣸⣿⣿⡿⠄⠄⠄⠄⠄⠄⠄⠄⢸⣿⣿⡄⠉⠄⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⣍⣁⣨⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿',
     ' ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⠄⠄⢤⣿⣿⣿⠃⣶⣶⠷⠤⠄⢾⣿⡿⡀⠻⣿⣷⡀⠄⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿',
-    '  ⣿⣿⣿⣿⣿⣿⣿⣿⣿⡄⠄⠄⣸⣿⣿⠇⠄⢀⣉⠄⠄⠄⡀⢁⠄⠄⠄⢻⣿⣷⡄⠄⢸⣿⣿⣿⣿⣿⣿⡏⡟⢘⢿⡟⡏⢿⣿⣟⡛⣿⣿⣿⣿⣿⣛⡙⣛⣿⣿⣿',
-    '  ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣇⠄⢠⣿⣿⡟⠄⠄⣿⣿⠏⠄⠄⠘⢿⡿⠄⠄⠄⢻⣿⣿⣄⢈⣿⣿⣿⣿⣿⣿⡇⡰⢸⢸⠇⡆⣆⢻⣿⡇⣿⣍⣤⡌⣿⣉⡁⢉⣿⣿⣿',
-    '   ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⣿⣿⠟⠄⠄⠄⠄⠂⠄⠄⠄⠄⠄⠄⠂⠄⠄⠄⠘⢿⣿⣾⣿⣿⣿⣿⣿⣿⡇⣇⠸⣸⢰⢰⡿⢸⡿⢡⣿⣿⣿⠇⣿⢣⣤⣸⣿⣿⣿',
-    '   ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠁⣰⣿⣿⡷⢀⣴⣾⣿⣿⣷⣦⡀⢠⣾⣿⣿⣄⠄⠙⢿⣿⣿⣿⣿⣿⣿⣿⣥⣿⣿⣤⣎⣴⣿⣧⣤⣽⣿⣤⣾⣿⣎⣉⣹⣿⣿ ',
+    '  ⣿⣿⣿⣿⣿⣿⣿⣿⣿⡄⠄⠄⣸⣿⣿⠇⠄⢀⣉⠄⠄⠄⡀⢁⠄⠄⠄⢻⣿⣷⡄⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿',
+    '  ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣇⠄⢠⣿⣿⡟⠄⠄⣿⣿⠏⠄⠄⠘⢿⡿⠄⠄⠄⢻⣿⣿⣄⢈⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿',
+    '   ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⣿⣿⠟⠄⠄⠄⠄⠂⠄⠄⠄⠄⠄⠄⠂⠄⠄⠄⠘⢿⣿⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿',
+    '   ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠁⣰⣿⣿⡷⢀⣴⣾⣿⣿⣷⣦⡀⢠⣾⣿⣿⣄⠄⠙⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ',
     '   ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⠚⠿⣿⣿⠇⣾⣿⣿⣿⣿⣿⣿⣷⢸⣿⡿⠿⠛⠁⠄⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿       ',
     '  ⣿⣿⣿⣿⣿⣿⣿⠟⠉⠄⠄⠄⠄⠄⠄⠄⠉⠉⠉⢉⣉⠉⠉⠉⠈⠄⠄⠄⠄⠄⠄⠄⠙⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿          ',
     ' ⣿⣿⣿⣿⣿⣿⡿⠁⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⣤⣿⣿⣤⡀⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿              ',
@@ -185,7 +191,7 @@ db.custom_header = {
 --db.preview_file_width = 70
 --[[ db.custom_center = { ]]
 --[[       {icon = '', ]]
---[[       --icon = '  ', ]]
+--[[       --icon = '  ', ]]
 --[[       desc = 'File Browser                                            ', ]]
 --[[       action = "Telescope find_files previewer=false layout_config={prompt_position='top'} disable_devicons=true", ]]
 --[[       shortcut = '~'}, ]]

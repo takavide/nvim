@@ -127,7 +127,7 @@ _G.packer_plugins = {
   ["dashboard-nvim"] = {
     loaded = true,
     path = "/home/takavide/.local/share/nvim/site/pack/packer/start/dashboard-nvim",
-    url = "https://github.com/glepnir/dashboard-nvim"
+    url = "https://github.com/nvimdev/dashboard-nvim"
   },
   ["friendly-snippets"] = {
     loaded = true,
@@ -203,6 +203,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/takavide/.local/share/nvim/site/pack/packer/start/nvim-ts-context-commentstring",
     url = "https://github.com/JoosepAlviste/nvim-ts-context-commentstring"
+  },
+  ["nvim-web-devicons"] = {
+    loaded = true,
+    path = "/home/takavide/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
+    url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
   ["packer.nvim"] = {
     loaded = true,

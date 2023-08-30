@@ -1,7 +1,7 @@
 def fnam():
     EOFError
         UnicodeError
-    1ddddddddddddddddddddddddddddddddddddddddddddddddd
+    1ddddddddddddddddddddddddddddddddddddddddddddddddd___d
     dodo d
     dfdfdfd
     ff

@@ -88,7 +88,7 @@ local filename = {
 local filetype = {
 	"filetype",
 	icons_enabled = false,
-	icon = nil,
+	--icon = nil,
   colored = false,
 }
 
@@ -97,7 +97,7 @@ local fileformat = {
   fmt = string.upper,
 	icons_enabled = false,
 	--icon = nil,
-  colored = true,
+  colored = false,
 }
 
 local branch = {

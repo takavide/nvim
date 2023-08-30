@@ -99,7 +99,7 @@ return packer.startup(function(use)
   use "lewis6991/gitsigns.nvim"
 
   -- Nvim-tree
-  --use "kyazdani42/nvim-web-devicons"
+  use "kyazdani42/nvim-web-devicons"
   use "nvim-tree/nvim-tree.lua"
 
   -- Lualine
@@ -121,7 +121,7 @@ return packer.startup(function(use)
   --use "folke/trouble.nvim"
 
   -- Dashboard
-  use "glepnir/dashboard-nvim"
+  use "nvimdev/dashboard-nvim"
 
   -- Buffers stuff 
   use "ghillb/cybu.nvim"
