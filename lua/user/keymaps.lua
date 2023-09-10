@@ -66,8 +66,6 @@ keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
 -- Telescope --
-keymap("n", "<leader>f", "<cmd>lua require('telescope.builtin').find_files({previewer=false, layout_config={prompt_position='top'}})<cr>", opts)
-keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts)
 
 -- Nvimtree -- 
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)

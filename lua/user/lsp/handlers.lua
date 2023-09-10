@@ -12,14 +12,14 @@ M.capabilities = cmp_nvim_lsp.default_capabilities(M.capabilities)
 
 M.setup = function()
 	local signs = {
-		 --[[ { name = "DiagnosticSignError", text = "" }, ]]
-		 --[[ { name = "DiagnosticSignWarn", text = "" }, ]]
-		 --[[ { name = "DiagnosticSignHint", text = "" }, ]]
-		 --[[ { name = "DiagnosticSignInfo", text = "" }, ]]
+		--[[ { name = "DiagnosticSignError", text = "" }, ]]
+		--[[ { name = "DiagnosticSignWarn", text = "" }, ]]
+		--[[ { name = "DiagnosticSignHint", text = "" }, ]]
+		--[[ { name = "DiagnosticSignInfo", text = "" }, ]]
 		{ name = "DiagnosticSignError", text = "E" },
-  		{ name = "DiagnosticSignWarn", text = "W" },
-  		{ name = "DiagnosticSignHint", text = "?" },
-  		{ name = "DiagnosticSignInfo", text = "I" },
+		{ name = "DiagnosticSignWarn", text = "W" },
+		{ name = "DiagnosticSignHint", text = "?" },
+		{ name = "DiagnosticSignInfo", text = "I" },
 	}
 
 	for _, sign in ipairs(signs) do
@@ -32,18 +32,18 @@ M.setup = function()
 		--virtual_text = false,
 		--virtual_lines = true,
 		--virtual_text = true,
-		 virtual_text = {
-		  spacing = 7,
-		  update_in_insert = false,
-		  severity_sort = true,
-		    --prefix = "<-",
-		    prefix = "●",
-		    --prefix = "*",
-		    source = "if_many", -- Or "always"
-		    -- format = function(diag)
-		    --   return diag.message .. "blah"
-		    -- end,
-		  },
+		virtual_text = {
+			spacing = 7,
+			update_in_insert = false,
+			severity_sort = true,
+			--prefix = "<-",
+			prefix = "●",
+			--prefix = "*",
+			source = "if_many", -- Or "always"
+			-- format = function(diag)
+			--   return diag.message .. "blah"
+			-- end,
+		},
 
 		-- show signs
 		signs = {
@@ -67,7 +67,7 @@ M.setup = function()
 	vim.diagnostic.config(config)
 
 	vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-	--	border = "rounded",
+		--	border = "rounded",
 		-- width = 60,
 		-- height = 30,
 	})
@@ -82,8 +82,8 @@ end
 local function lsp_keymaps(bufnr)
 	local opts = { noremap = true, silent = true }
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", "<cmd>Telescope lsp_definitions<CR>", opts)
-	--vim.api.nvim_buf_set_keymap(bufnr, "n", "gD", "<cmd>Telescope lsp_declarations<CR>", opts)
-	-- vim.api.nvim_buf_set_keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
+	vim.api.nvim_buf_set_keymap(bufnr, "n", "gD", "<cmd>Telescope lsp_declarations<CR>", opts)
+	vim.api.nvim_buf_set_keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "gI", "<cmd>Telescope lsp_implementations<CR>", opts)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", "<cmd>Telescope lsp_references<CR>", opts)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
@@ -91,13 +91,13 @@ local function lsp_keymaps(bufnr)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "gs", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "<M-f>", "<cmd>Format<cr>", opts)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "<M-a>", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
-	-- vim.api.nvim_buf_set_keymap(bufnr, "n", "<M-s>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
-	-- vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
-	-- vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
-	-- vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>f", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
-	-- vim.api.nvim_buf_set_keymap(bufnr, "n", "[d", '<cmd>lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>', opts)
-	-- vim.api.nvim_buf_set_keymap(bufnr, "n", "]d", '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
-	-- vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
+	vim.api.nvim_buf_set_keymap(bufnr, "n", "<M-s>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
+	vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
+	vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
+	vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>f", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
+	vim.api.nvim_buf_set_keymap(bufnr, "n", "[d", '<cmd>lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>', opts)
+	vim.api.nvim_buf_set_keymap(bufnr, "n", "]d", '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
+	--vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>b", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
 end
 
 M.on_attach = function(client, bufnr)

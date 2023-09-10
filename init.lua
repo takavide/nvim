@@ -18,6 +18,7 @@ require "user.colorizer"
 require "user.whichkey"
 require "user.dashboard"
 require "user.cybu"
+require "user.orgmode"
 --require "user.trouble"
 --require "user.discord-presence
 
