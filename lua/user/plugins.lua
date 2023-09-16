@@ -13,8 +13,6 @@ if fn.empty(fn.glob(install_path)) > 0 then
   print "Installing packer close and reopen Neovim..."
   vim.cmd [[packadd packer.nvim]]
 end
-
-
 -- Autocommand that reloads neovim whenever you save the plugins.lua file
 vim.cmd [[
   augroup packer_user_config
@@ -115,30 +113,21 @@ return packer.startup(function(use)
   -- Impatient(loads faster)
   use "lewis6991/impatient.nvim"
   -- 
-
   -- Whichkey
   use "folke/which-key.nvim"
-
   -- trouble.nvim
   --use "folke/trouble.nvim"
-
   -- Dashboard
   use "nvimdev/dashboard-nvim"
-
   -- Buffers stuff 
   use "ghillb/cybu.nvim"
-
   -- Discord activity(idk)
   --use "andweeb/presence.nvim"
-
   -- Buffers delete ez
   use 'famiu/bufdelete.nvim'
-
   -- Orgmode for organisation
-  use 'nvim-orgmode/orgmode'
-
+  --use 'nvim-orgmode/orgmode'
   -- Copilot
-  --use 'github/copilot.vim'
   use {
     "zbirenbaum/copilot.lua",
     cmd = "Copilot",
@@ -150,7 +139,6 @@ return packer.startup(function(use)
       })
     end,
   }
-
   use {
     "zbirenbaum/copilot-cmp",
     after = { "copilot.lua" },
@@ -158,14 +146,7 @@ return packer.startup(function(use)
       require("copilot_cmp").setup()
     end
   }
-
-  -- DAP fix later
-  --use 'mfussenegger/nvim-dap'
-  --
-  --
-  --
-  --
-  
+  use "folke/neodev.nvim"
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
     require("packer").sync()

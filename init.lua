@@ -3,6 +3,7 @@ require "user.keymaps"
 require "user.plugins"
 require 'user.impatient'
 require "user.colorscheme"
+require "user.neodev"
 require "user.lsp" -- lag on large files small culprit - already has latency
 require "user.cmp" -- lag on large files small cuplrit fix by adding latency or keymap to disable cmp on buffer?
 require "user.telescope" -- live grep laggy not useful(maybe fixed with turning of indentline?
