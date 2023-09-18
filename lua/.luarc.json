@@ -42,6 +42,7 @@
         "/home/takavide/.local/share/nvim/site/pack/packer/start/tokyonight.nvim/lua",
         "/home/takavide/.local/share/nvim/site/pack/packer/start/which-key.nvim/lua",
         "/home/takavide/.config/nvim/lua",
-        "${3rd}/luv/library"
+        "${3rd}/luv/library",
+        "${3rd}/luassert/library"
     ]
 }

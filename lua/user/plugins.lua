@@ -134,7 +134,7 @@ return packer.startup(function(use)
     event = "InsertEnter",
     config = function()
       require("copilot").setup({
-        suggestion = { enabled = false },
+        suggestion = { enabled = true },
         panel = { enabled = false },
       })
     end,
@@ -146,7 +146,7 @@ return packer.startup(function(use)
       require("copilot_cmp").setup()
     end
   }
-  use "folke/neodev.nvim"
+  --use "folke/neodev.nvim"
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
     require("packer").sync()
