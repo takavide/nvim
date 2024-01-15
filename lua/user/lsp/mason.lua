@@ -173,21 +173,31 @@ require'lspconfig'.clangd.setup{
   flags = lsp_flags,
   on_attach = require("user.lsp.handlers").on_attach,
   capabilities = require("user.lsp.handlers").capabilities,
+  cmd = {
+    "clangd",
+    "--offset-encoding=utf-16",
+  },
 }
 
 require'lspconfig'.als.setup{
-on_attach = require("user.lsp.handlers").on_attach,
-capabilities = require("user.lsp.handlers").capabilities,
-settings = {
-    ada = {
-      filetypes ={
-        "ads",
-        "adb",
-        "ada"
-    }
-  },
-},
-flags = lsp_flags,
+    on_attach = require("user.lsp.handlers").on_attach,
+    capabilities = require("user.lsp.handlers").capabilities,
+    settings = {
+        ada = {
+          filetypes ={
+            "ads",
+            "adb",
+            "ada"
+        }
+      },
+    },
+    flags = lsp_flags,
+}
+
+require'lspconfig'.asm_lsp.setup{
+    on_attach = require("user.lsp.handlers").on_attach,
+    capabilities = require("user.lsp.handlers").capabilities,
+    flags = lsp_flags,
 }
 
 vim.api.nvim_set_hl(0, "NormalFloat", {bg="#16161e"})
